@@ -1,13 +1,13 @@
 # Overall filter parameters
 transform_tolerance: 0.2
-update_min_d: 0.05 # improve amcl a lot
-update_min_a: 0.05 # improve amcl a lot
-min_particles: 100
-max_particles: 500
+update_min_d: 0.01 # improve amcl a lot
+update_min_a: 0.01 # improve amcl a lot
+min_particles: 20
+max_particles: 200
 
 # Laser model parameters
 # laser_min_range: 0.1 # udacity_bot.gazebo
-# laser_max_range: 5.0
+# laser_max_range: 15.0
 laser_max_beams: 100 # too large, map/ctrl update loop missed
 
 # Odometry model parameters
