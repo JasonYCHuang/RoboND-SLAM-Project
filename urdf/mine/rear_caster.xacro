@@ -1,0 +1,34 @@
+<?xml version='1.0'?>
+
+<robot name="rear_caster" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <link name='rear_caster'>
+    <collision name='rear_caster_collision'>
+      <geometry>
+        <cylinder length='0.1' radius='0.05'/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.1"/>
+      <inertia
+        ixx="0.1" ixy="0" ixz="0"
+        iyy="0.1" iyz="0"
+        izz="0.1"
+      />
+    </inertial>
+
+    <visual name='rear_caster_visual'>
+      <geometry>
+        <cylinder length='0.1' radius='0.05'/>
+      </geometry>
+    </visual>
+
+  </link>
+
+  <joint type="continuous" name="rear_caster_joint">
+    <origin xyz="-0.25 0 0" rpy="0 0 0"/>
+    <child link="rear_caster"/>
+    <parent link="chassis"/>
+    <axis xyz="0 0 1" rpy="0 0 0"/>
+  </joint>
+</robot>

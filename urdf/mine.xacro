@@ -1,0 +1,16 @@
+<?xml version='1.0'?>
+
+<robot name="udacity_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find udacity_bot)/urdf/mine.gazebo" />
+  <xacro:include filename="$(find udacity_bot)/urdf/mine/footprint.xacro" />
+  <xacro:include filename="$(find udacity_bot)/urdf/mine/chassis.xacro" />
+  <xacro:include filename="$(find udacity_bot)/urdf/mine/rear_caster.xacro" />
+  <xacro:include filename="$(find udacity_bot)/urdf/mine/rear_wheel.xacro" />
+  <xacro:include filename="$(find udacity_bot)/urdf/mine/right_wheel.xacro" />
+  <xacro:include filename="$(find udacity_bot)/urdf/mine/left_wheel.xacro" />
+  <xacro:include filename="$(find udacity_bot)/urdf/mine/camera.xacro" />
+  <xacro:include filename="$(find udacity_bot)/urdf/mine/laser.xacro" />
+  <xacro:include filename="$(find udacity_bot)/urdf/mine/rod.xacro" />
+
+</robot>
