@@ -1,0 +1,38 @@
+<?xml version='1.0'?>
+
+<robot name="slam_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- kinect - LINK -->
+  <link name='kinect'>
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia
+        ixx="1e-6" ixy="0" ixz="0"
+        iyy="1e-6" iyz="0"
+        izz="1e-6"
+      />
+    </inertial>
+
+    <collision name='kinect_collision'>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.07271 0.27794 0.073" />
+      </geometry>
+    </collision>
+
+    <visual name='kinect_visual'>
+      <origin xyz="0 0 0" rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://udacity_bot/meshes/kinect.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- kinect + chassis JOINT -->
+  <joint type="fixed" name="kinect_joint">
+    <origin xyz="0 0 0.2" rpy="0 0 0"/>
+    <child link="kinect"/>
+    <parent link="rod"/>
+  </joint>
+</robot>

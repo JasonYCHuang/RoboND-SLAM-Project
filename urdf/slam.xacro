@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+
+<robot name="slam_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find udacity_bot)/urdf/slam.gazebo" />
+
+  <xacro:include filename="$(find udacity_bot)/urdf/slam/chassis.xacro" />
+  <xacro:include filename="$(find udacity_bot)/urdf/slam/right_wheel.xacro" />
+  <xacro:include filename="$(find udacity_bot)/urdf/slam/left_wheel.xacro" />
+  <xacro:include filename="$(find udacity_bot)/urdf/slam/rod.xacro" />
+  <xacro:include filename="$(find udacity_bot)/urdf/slam/kinect.xacro" />
+  <xacro:include filename="$(find udacity_bot)/urdf/slam/laser.xacro" />
+
+</robot>
