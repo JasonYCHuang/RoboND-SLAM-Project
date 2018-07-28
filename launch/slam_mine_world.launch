@@ -7,6 +7,13 @@
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
   <arg name="debug" default="false"/>
+  <!--robot init pose params-->
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="0.28"/>
+  <arg name="roll" default="0"/>
+  <arg name="pitch" default="0"/>
+  <arg name="yaw" default="0"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find udacity_bot)/worlds/mine.world"/>
@@ -21,7 +28,16 @@
   <include file="$(find udacity_bot)/launch/slam/robot_description.launch"/>
 
   <!--spawn a robot in gazebo world-->
-  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -param robot_description -model slam_bot"/>
+  <node 
+    name="urdf_spawner" 
+    pkg="gazebo_ros" 
+    type="spawn_model" 
+    respawn="false" 
+    output="screen" 
+    args="-urdf -param robot_description -model slam_bot 
+          -x $(arg x) -y $(arg y) -z $(arg z) 
+          -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"
+  />
 
   <!--teleop-->
   <include file="$(find udacity_bot)/launch/slam/teleop.launch"/>
